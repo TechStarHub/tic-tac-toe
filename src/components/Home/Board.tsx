@@ -1,4 +1,4 @@
-import Piece from './Piece';
+import Piece from '../TicTagToe/Piece';
 
 export default function Board() {
   return (

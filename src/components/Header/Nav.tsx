@@ -20,7 +20,7 @@ export default function NavBar() {
               ) : (
                 <IoHomeOutline className="text-xl" />
               )}
-              <span className="">Home</span>
+              <span className="hidden sm:block">Home</span>
             </span>
           </Link>
         </li>
@@ -32,7 +32,7 @@ export default function NavBar() {
               ) : (
                 <IoGameControllerOutline className="text-xl" />
               )}
-              <span className="">Play</span>
+              <span className="hidden sm:block">Play</span>
             </span>
           </Link>
         </li>
@@ -44,7 +44,7 @@ export default function NavBar() {
               ) : (
                 <IoMdInformationCircleOutline className="text-xl" />
               )}
-              <span className="">About</span>
+              <span className="hidden sm:block">About</span>
             </span>
           </Link>
         </li>

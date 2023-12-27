@@ -22,13 +22,13 @@ export default function TicTagToe() {
         transition={{ delay: 4.5, duration: 0.5 }}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex flex-col items-center  "
       >
-        <h3 className="text-center text-3xl font-bold">
+        <h5 className="text-center text-3xl font-bold">
           Play Tic Tac Toe with a friend!
-        </h3>
+        </h5>
         <button
           type="button"
           onClick={() => router.push('/tic-tac-toe')}
-          role="link"
+          role="button"
           aria-placeholder="Start Tic Tac Toe"
           className="text-xl text-white mt-6 px-8 py-2 bg-indigo-500 rounded font-medium flex items-center gap-2 hover:bg-indigo-600 hover:shadow-md transition-all duration-500 group "
         >

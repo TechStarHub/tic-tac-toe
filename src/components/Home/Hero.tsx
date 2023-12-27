@@ -1,4 +1,4 @@
-import TicTagToe from '../TicTagToe/TicTagToe';
+import TicTagToe from './TicTagToe';
 
 export default function Hero() {
   return (
