@@ -28,7 +28,7 @@ export default function TossCoin({ setTossCoinDone }: TossCoinProps) {
     // to be called from parent component to set the state of tossCoinDone to true
     if (setTossCoinDone) {
       setTimeout(() => {
-        setTossCoinDone([true, coinSide === 0 ? 'heads' : 'tails']);
+        setTossCoinDone([true, flipResult === 0 ? 'heads' : 'tails']);
       }, 5000);
     }
   };
