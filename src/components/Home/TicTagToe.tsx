@@ -27,10 +27,10 @@ export default function TicTagToe() {
         </h5>
         <button
           type="button"
-          onClick={() => router.push('/tic-tac-toe')}
+          onClick={() => router.push('/play')}
           role="button"
           aria-placeholder="Start Tic Tac Toe"
-          className="text-xl text-white mt-6 px-8 py-2 bg-indigo-500 rounded font-medium flex items-center gap-2 hover:bg-indigo-600 hover:shadow-md transition-all duration-500 group "
+          className="text-xl text-white mt-6 px-8 py-2 bg-indigo-500 rounded font-medium flex items-center gap-2 hover:bg-indigo-600 hover:shadow-lg active:translate-y-2 transition-all duration-500 group "
         >
           Start
           <span className="">
@@ -38,6 +38,10 @@ export default function TicTagToe() {
             <IoGameController className="text-2xl hidden group-hover:block" />
           </span>
         </button>
+        <p className="text-center mt-6 text-slate-800 ">
+          Play against a friend or the AI, or create a room and invite a friend
+          to play with you.
+        </p>
       </motion.div>
     </div>
   );
