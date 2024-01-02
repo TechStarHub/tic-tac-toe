@@ -15,9 +15,19 @@ export default function WinnerResult({
   return (
     <div className="w-[350px] min-h-[200px] absolute top-[35%] flex flex-col gap-2 items-center justify-center backdrop-blur bg-slate-300/30 p-4 rounded shadow-md ">
       <div className="flex gap-2 items-center ">
-        <span className="text-2xl font-bold text-slate-900">{playerName}</span>
-        <span className="text-2xl font-bold text-slate-900">wins</span>
-        <FaCrown className="text-3xl text-yellow-500" />
+        {winner !== 'T' ? (
+          <>
+            <span className="text-2xl font-bold text-slate-900">
+              {playerName}
+            </span>
+            <span className="text-2xl font-bold text-slate-900">wins</span>
+            <FaCrown className="text-3xl text-yellow-500" />
+          </>
+        ) : (
+          <span className="text-2xl font-bold text-slate-900">
+            {`It's a tie !`} {/* to pass lint error */}
+          </span>
+        )}
       </div>
       <div className="w-full flex flex-col gap-3">
         <button

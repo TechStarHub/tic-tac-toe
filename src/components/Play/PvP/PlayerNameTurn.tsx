@@ -45,7 +45,7 @@ export default function PlayerNameTurn({
         <span className="">
           {isTurn ? (
             <span className="flex items-center gap-2">
-              's turn
+              {`'s turn`} {/* to pass lint error */}
               <AiOutlineLoading3Quarters className="animate-spin text-xl font-bold" />
             </span>
           ) : (
