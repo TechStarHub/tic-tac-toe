@@ -5,11 +5,17 @@ import { motion } from 'framer-motion';
 
 type PieceProps = {
   type?: string | 'X' | 'x' | 'O' | 'o';
-  border?: boolean | false;
-  delay?: number | 0;
+  border?: boolean;
+  delay?: number;
+  dragable?: boolean;
 };
 
-export default function Piece({ type, border, delay }: PieceProps) {
+export default function Piece({
+  type,
+  border = false,
+  delay = 0,
+  dragable = false,
+}: PieceProps) {
   if (type === 'X' || type === 'x') {
     return (
       <div className="bg-slate-50 w-full h-full rounded shadow">
@@ -17,8 +23,10 @@ export default function Piece({ type, border, delay }: PieceProps) {
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: delay, duration: 0.5 }}
-          className={`w-full h-full flex justify-center items-center cursor-grab  rounded`}
-          draggable
+          className={`w-full h-full flex justify-center items-center ${
+            dragable ? 'cursor-grab' : 'cursor-pointer'
+          }  rounded`}
+          draggable={dragable}
         >
           <IoClose
             className={`w-full h-full text-red-500 ${
@@ -35,8 +43,10 @@ export default function Piece({ type, border, delay }: PieceProps) {
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: delay, duration: 0.5 }}
-          className={`w-full h-full flex justify-center items-center cursor-grab rounded `}
-          draggable
+          className={`w-full h-full flex justify-center items-center ${
+            dragable ? 'cursor-grab' : 'cursor-pointer'
+          } rounded `}
+          draggable={dragable}
         >
           <FaRegCircle
             className={` w-[70%] h-[70%] text-blue-500 ${
@@ -47,6 +57,11 @@ export default function Piece({ type, border, delay }: PieceProps) {
       </div>
     );
   } else {
-    return <div className="bg-slate-50 w-full h-full rounded" draggable></div>;
+    return (
+      <div
+        className="bg-slate-50 w-full h-full rounded"
+        draggable={dragable}
+      ></div>
+    );
   }
 }
