@@ -37,14 +37,11 @@ const About = () => {
     },
   ];
 
-  const handleClick = () => {
-    setStep((step + 1) % content.length);
+  const handleNext = () => {
+    setStep((prev) => (prev + 1) % content.length);
   };
-  const handleclick1 = () => {
-    if (step == 0) {
-      return step + 1;
-    }
-    setStep(step - 1);
+  const handlePrev = () => {
+    setStep((prev) => (prev - 1 + content.length) % content.length); // to avoid negative numbers
   };
 
   return (
@@ -59,13 +56,13 @@ const About = () => {
         <div className="flex gap-3 mt-4">
           <button
             className="bg-[#4caf50] px-4 py-2 rounded text-white hover:bg-[#3e8e41] transition-all duration-300"
-            onClick={handleclick1}
+            onClick={handlePrev}
           >
             Previous
           </button>
           <button
             className="bg-[#4caf50] px-4 py-2 rounded text-white hover:bg-[#3e8e41] transition-all duration-300"
-            onClick={handleClick}
+            onClick={handleNext}
           >
             Next
           </button>
